@@ -1,0 +1,21 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <app-data-table [tableCellConfig]="vm.tableCellConfig"
+                  [tableData]="vm.tableData"
+                  [tableCellTemplateConfig]="tableCellTemplateConfig"></app-data-table>
+</ng-container>
+
+<ng-template #currencyNameTmp
+             let-cell="$implicit">
+  <div class="cell-template name d-flex align-items-center">
+    <img class="cell-logo m-r-1"
+         src="{{cell.icon}}" />
+    <span class="name m-r-1">{{cell.name}}</span>
+    <span class="symbol">{{cell.symbol}}</span>
+  </div>
+</ng-template>
+
+<ng-template #changeTemp
+             let-cell="$implicit"
+             let-key="key">
+  <app-change-indicator [changeVal]="cell[key]"></app-change-indicator>
+</ng-template>

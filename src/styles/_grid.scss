@@ -1,0 +1,20 @@
+.table-grid {
+  &__row {
+    display: flex;
+    flex-direction: row;
+
+    &.d-show {
+      @include d-show("flex");
+    }
+
+    &--col {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+    }
+  }
+  .cell-logo {
+    width: 32px;
+    height: auto;
+  }
+}

@@ -1,0 +1,17 @@
+<div [ngClass]="col.classMap!"
+     *ngFor="let col of row.colCells"
+     class="table-grid__row--col">
+  <div class="header-label m-show">{{col.headerLabel}}</div>
+
+  <ng-container [ngSwitch]="true">
+    <ng-container *ngSwitchCase="isTemplateRef(col.cellRender)">
+      <ng-container *ngTemplateOutlet="$any(col.cellRender); context: { $implicit: col.value , key:col.key}">
+      </ng-container>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+      <span class="table-grid__cell">{{col.label}}</span>
+    </ng-container>
+  </ng-container>
+
+</div>

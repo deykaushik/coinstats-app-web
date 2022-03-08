@@ -1,0 +1,14 @@
+$small: 520px;
+
+@mixin d-show($display: "block") {
+  display: none !important;
+  @media screen and (min-width: #{$small}) {
+    display: #{$display} !important;
+  }
+}
+@mixin m-show($display: "block") {
+  display: none !important;
+  @media screen and (max-width: #{$small}) {
+    display: #{$display} !important;
+  }
+}

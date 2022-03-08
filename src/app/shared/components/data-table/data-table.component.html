@@ -1,0 +1,9 @@
+<div class="table-grid">
+  <div app-table-row
+       class="table-grid__row table-grid__row--header-row d-show"
+       [row]="dataTable.tableHeaderRow"></div>
+  <div app-table-row
+       class="table-grid__row table-grid__row--body-row"
+       *ngFor="let tableRow of dataTable.tableBodyRows"
+       [row]="tableRow"></div>
+</div>
