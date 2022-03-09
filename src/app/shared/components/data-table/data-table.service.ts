@@ -69,7 +69,6 @@ export class DataTableService {
       });
       tableRows.push(tableRow);
     });
-    console.log(tableRows);
     return tableRows;
   }
 }
