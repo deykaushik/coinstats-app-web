@@ -26,6 +26,7 @@ export class CryptocurrenciesTableComponent
 
   @ViewChild('currencyNameTmp') currencyNameTmp!: TemplateRef<any>;
   @ViewChild('changeTemp') changeTemp!: TemplateRef<any>;
+  @ViewChild('priceTemp') priceTemp!: TemplateRef<any>;
 
   constructor(private coinsService: CoinsApiService) {}
 
@@ -43,6 +44,9 @@ export class CryptocurrenciesTableComponent
     this.tableCellTemplateConfig['name'] = this.currencyNameTmp;
     ['priceChange1h', 'priceChange1d', 'priceChange1w'].forEach((item) => {
       this.tableCellTemplateConfig[item] = this.changeTemp;
+    });
+    ['marketCap', 'volume'].forEach((item) => {
+      this.tableCellTemplateConfig[item] = this.priceTemp;
     });
   }
 

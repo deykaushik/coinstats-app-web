@@ -19,3 +19,9 @@
              let-key="key">
   <app-change-indicator [changeVal]="cell[key]"></app-change-indicator>
 </ng-template>
+
+<ng-template #priceTemp
+             let-cell="$implicit"
+             let-key="key">
+  {{cell[key] | priceSuffix : 2 : '$'}}
+</ng-template>
